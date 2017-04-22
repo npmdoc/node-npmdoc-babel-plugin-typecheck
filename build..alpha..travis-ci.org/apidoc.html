@@ -1,0 +1,504 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/codemix/babel-plugin-typecheck"
+
+    >babel-plugin-typecheck (v3.9.0)</a>
+</h1>
+<h4>Transforms flow type annotations into runtime type checks.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-typecheck">module babel-plugin-typecheck</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-typecheck.default">
+            function <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>default
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>inferers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>old_index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>type_checks</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-typecheck.index">module babel-plugin-typecheck.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-typecheck.index.default">
+            function <span class="apidocSignatureSpan">babel-plugin-typecheck.index.</span>default
+            <span class="apidocSignatureSpan">(_ref102)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-typecheck.inferers">module babel-plugin-typecheck.inferers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-typecheck.inferers.default">
+            function <span class="apidocSignatureSpan">babel-plugin-typecheck.inferers.</span>default
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-typecheck.old_index">module babel-plugin-typecheck.old_index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-typecheck.old_index.default">
+            function <span class="apidocSignatureSpan">babel-plugin-typecheck.old_index.</span>default
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-typecheck.type_checks">module babel-plugin-typecheck.type_checks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-typecheck.type_checks.default">
+            function <span class="apidocSignatureSpan">babel-plugin-typecheck.type_checks.</span>default
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">babel-plugin-typecheck.type_checks.</span>INVALID</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">babel-plugin-typecheck.type_checks.</span>NEEDS_CHECK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">babel-plugin-typecheck.type_checks.</span>STATICALLY_VERIFIED</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-typecheck" id="apidoc.module.babel-plugin-typecheck">module babel-plugin-typecheck</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-typecheck.default" id="apidoc.element.babel-plugin-typecheck.default">
+        function <span class="apidocSignatureSpan">babel-plugin-typecheck.</span>default
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function (_ref){var t=_ref.types;var template=_ref.template; /**
+* Binary Operators that can only produce boolean results.
+*/var BOOLEAN_BINARY_OPERATORS=[&#x27;==&#x27;,&#x27;===&#x27;,&#x27;&#x3e;=&#x27;,&#x27;&#x3c;=&#x27;,&#x27;&#x3e;&#x27;,&#x27;&#x3c;&#x27;,&#x27;instanceof&#x27;];var checks=createChecks();var staticChecks=createStaticChecks
+();var checkIsArray=expression(&#x27;Array.isArray(input)&#x27;);var checkIsMap=expression(&#x27;input instanceof Map&#x27;);var checkIsSet=expression
+(&#x27;input instanceof Set&#x27;);var checkIsClass=expression(&#x27;typeof input ===\&#x27;function\&#x27; &#x26;&#x26; input.prototype &#x26;&#x26; input.prototype.constructor === input&#x27;);var checkIsGenerator=expression(&#x27;typeof input === \&#x27;function\&#x27; &#x26;&#x26; input.generator&#x27;);var checkIsIterable=expression(&#x27;input &#x26;&#x26; (typeof input[Symbol.iterator] === \&#x27;function\&#x27; || Array.isArray(input))&#x27;);var checkIsObject=expression(&#x27;input != null &#x26;&#x26; typeof input === \&#x27;object\&#x27;&#x27;);var checkNotNull=expression(&#x27;input != null&#x27;);var checkEquals=expression(&#x27;input === expected&#x27;);var declareTypeChecker=template(&#x27;\n    const id = (function () {\n      function id (input) {\n        return check;\n      };\n      Object.defineProperty(id, Symbol.hasInstance, {\n        value: function (input) {\n          return id(input);\n        }\n      });\n      return id;\n    })();\n  &#x27;);var guard=template(&#x27;\n    if (!check) {\n      throw new TypeError(message);\n    }\n  &#x27;);var thrower=template(&#x27;\n    if (check) {\n      ret;\n    }\n    else {\n      throw new TypeError(message);\n    }\n  &#x27;);var guardInline=expression(&#x27;\n    (id =&#x3e; {\n      if (!check) {\n        throw new TypeError(message);\n      }\n      return id;\n    })(input)\n  &#x27;);var guardFn=expression(&#x27;\n    function name (id) {\n      if (!check) {\n        throw new TypeError(message);\n      }\n      return id;\n    }\n  &#x27;);var readableName=expression(&#x27;\n    inspect(input)\n  &#x27;);var checkMapKeys=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input.keys()).every(key =&#x3e; keyCheck)\n  &#x27;);var checkMapValues=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input.values()).every(value =&#x3e; valueCheck)\n  &#x27;);var checkMapEntries=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input).every(([key, value]) =&#x3e; keyCheck &#x26;&#x26; valueCheck)\n  &#x27;);var checkSetEntries=expression(&#x27;\n    input instanceof Set &#x26;&#x26; Array.from(input).every(value =&#x3e; valueCheck)\n  &#x27;);var checkObjectIndexers=expression(&#x27;\n    Object.keys(input).every(key =&#x3e; {\n      const value = input[key];\n      if (~fixedKeys.indexOf(key)) {\n        return true;\n      }\n      else {\n        return check;\n      }\n    });\n  &#x27;);var checkObjectIndexersNoFixed=expression(&#x27;\n    Object.keys(input).every(key =&#x3e; {\n      const value = input[key];\n      return check;\n    });\n  &#x27;);var propType=expression(&#x27;\n    (function(props, name, component) {\n      var prop = props[name];\n      if(!check) {\n        return new Error(\n          &#x22;Invalid prop `&#x22; + name + &#x22;` supplied to `&#x22; + component\n          + &#x22;`.\\n\\nExpected:\\n&#x22; + expected + &#x22;\\n\\nGot:\\n&#x22; + got + &#x22;\\n\\n&#x22;\n        );\n      }\n    })\n  &#x27;);var PRAGMA_IGNORE_STATEMENT=/typecheck:\s*ignore\s+statement/i;var PRAGMA_IGNORE_FILE=/typecheck:\s*ignore\s+file/i;function skipEnvironment(comments,opts){if(!opts.only){return false;}var envs=pragmaEnvironments(comments);return !opts.only.some(function(env){return envs[env];});}function pragmaEnvironments(comments){var pragma=/@typecheck:\s*(.+)/;var environments={};comments.forEach(function(comment){var m=comment.value.match(pragma);if(m){m[1].split(&#x27;,&#x27;).forEach(function(env){return environments[env.trim()]=true;});}});return environments;}var visitors={Statement:function Statement(path){maybeSkip(path);},TypeAlias:function TypeAlias(path){if(maybeSkip(path)){return;}path.replaceWith(createTypeAliasChecks(path));},InterfaceDeclaration:function InterfaceDeclaration(path){if(maybeSkip(path)){return;}path.replaceWith(createInterfaceChecks(path));},ExportNamedDeclaration:function ExportNamedDeclaration(path){if(maybeSkip(path)){return;}var node=path.node;var scope=path.scope;if(node.declaration&#x26;&#x26;node.declaration.type===&#x27;TypeAlias&#x27;){var declaration=path.get(&#x27;declaration&#x27;);declaration.replaceWith(crea ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-typecheck.index" id="apidoc.module.babel-plugin-typecheck.index">module babel-plugin-typecheck.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-typecheck.index.default" id="apidoc.element.babel-plugin-typecheck.index.default">
+        function <span class="apidocSignatureSpan">babel-plugin-typecheck.index.</span>default
+        <span class="apidocSignatureSpan">(_ref102)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function (_ref102){var t=_ref102.types;var template=_ref102.template; /**
+* Binary Operators that can only produce boolean results.
+*/var BOOLEAN_BINARY_OPERATORS=[&#x27;==&#x27;,&#x27;===&#x27;,&#x27;&#x3e;=&#x27;,&#x27;&#x3c;=&#x27;,&#x27;&#x3e;&#x27;,&#x27;&#x3c;&#x27;,&#x27;instanceof&#x27;];if(!(Array.isArray(BOOLEAN_BINARY_OPERATORS)&#x26;&#x26;BOOLEAN_BINARY_OPERATORS
+.every(function(item){return typeof item===&#x27;string&#x27;;}))){throw new TypeError(&#x27;Value of variable &#x22;BOOLEAN_BINARY_OPERATORS&#x22; violates
+ contract.\n\nExpected:\nstring[]\n\nGot:\n&#x27;+_inspect(BOOLEAN_BINARY_OPERATORS));}var checks=createChecks();var staticChecks=createStaticChecks();var checkIsArray=expression(&#x27;Array.isArray(input)&#x27;);if(!(typeof checkIsArray===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsArray&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsArray));}var checkIsMap=expression(&#x27;input instanceof Map&#x27;);if(!(typeof checkIsMap===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsMap&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsMap));}var checkIsSet=expression(&#x27;input instanceof Set&#x27;);if(!(typeof checkIsSet===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsSet&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsSet));}var checkIsClass=expression(&#x27;typeof input === \&#x27;function\&#x27; &#x26;&#x26; input.prototype &#x26;&#x26; input.prototype.constructor === input&#x27;);if(!(typeof checkIsClass===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsClass&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsClass));}var checkIsGenerator=expression(&#x27;typeof input === \&#x27;function\&#x27; &#x26;&#x26; input.generator&#x27;);if(!(typeof checkIsGenerator===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsGenerator&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsGenerator));}var checkIsIterable=expression(&#x27;input &#x26;&#x26; (typeof input[Symbol.iterator] === \&#x27;function\&#x27; || Array.isArray(input))&#x27;);if(!(typeof checkIsIterable===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsIterable&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsIterable));}var checkIsObject=expression(&#x27;input != null &#x26;&#x26; typeof input === \&#x27;object\&#x27;&#x27;);if(!(typeof checkIsObject===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkIsObject&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkIsObject));}var checkNotNull=expression(&#x27;input != null&#x27;);if(!(typeof checkNotNull===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkNotNull&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkNotNull));}var checkEquals=expression(&#x27;input === expected&#x27;);if(!(typeof checkEquals===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;checkEquals&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(checkEquals));}var declareTypeChecker=template(&#x27;\n    const id = (function () {\n      function id (input) {\n        return check;\n      };\n      Object.defineProperty(id, Symbol.hasInstance, {\n        value: function (input) {\n          return id(input);\n        }\n      });\n      return id;\n    })();\n  &#x27;);if(!(typeof declareTypeChecker===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;declareTypeChecker&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(declareTypeChecker));}var guard=template(&#x27;\n    if (!check) {\n      throw new TypeError(message);\n    }\n  &#x27;);if(!(typeof guard===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;guard&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(guard));}var thrower=template(&#x27;\n    if (check) {\n      ret;\n    }\n    else {\n      throw new TypeError(message);\n    }\n  &#x27;);if(!(typeof thrower===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;thrower&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_inspect(thrower));}var guardInline=expression(&#x27;\n    (id =&#x3e; {\n      if (!check) {\n        throw new TypeError(message);\n      }\n      return id;\n    })(input)\n  &#x27;);if(!(typeof guardInline===&#x27;function&#x27;)){throw new TypeError(&#x27;Value of variable &#x22;guardInline&#x22; violates contract.\n\nExpected:\n() =&#x3e; Node\n\nGot:\n&#x27;+_ins ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-typecheck.inferers" id="apidoc.module.babel-plugin-typecheck.inferers">module babel-plugin-typecheck.inferers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-typecheck.inferers.default" id="apidoc.element.babel-plugin-typecheck.inferers.default">
+        function <span class="apidocSignatureSpan">babel-plugin-typecheck.inferers.</span>default
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function make(_ref) {
+  var t = _ref.types;
+  var template = _ref.template;
+
+  var INFERENCE_TYPES = {};
+
+<span class="apidocCodeCommentSpan">  /**
+   * Register a new type inference for the given node type.
+   */
+</span>  function register(type, fn) {
+    INFERENCE_TYPES[type] = fn;
+  }
+
+  /**
+   * Infer the type of the given node path and return an annotation.
+   */
+  function inferType(path) {
+    var inferer = INFERENCE_TYPES[path.type];
+    if (inferer) {
+      return inferer(path);
+    } else {
+      console.log(&#x27;Unsupported Type: &#x27; + path.type);
+      return path.getTypeAnnotation() || t.anyTypeAnnotation();
+    }
+  }
+
+  function lookupGlobalIdentifier(name) {
+    switch (name) {
+      case &#x27;Symbol&#x27;:
+        return t.functionTypeAnnotation(null, [], null, t.anyTypeAnnotation());
+        return t.functionTypeAnnotation(null, [t.functionTypeParam(t.identifier(&#x27;key&#x27;), t.stringTypeAnnotation())], null, t.anyTypeAnnotation
+() //t.genericTypeAnnotation(t.identifier(&#x27;Symbol&#x27;))
+        );
+      default:
+        return t.anyTypeAnnotation();
+    }
+  }
+
+  register(&#x27;ObjectExpression&#x27;, function (path) {
+    var _path$get$reduce = path.get(&#x27;properties&#x27;).reduce(function (_ref2, prop) {
+      var _ref3 = _slicedToArray(_ref2, 2);
+
+      var properties = _ref3[0];
+      var indexers = _ref3[1];
+
+      if (prop.node.computed) {
+        var keyType = inferType(prop.get(&#x27;key&#x27;));
+        if (keyType.type === &#x27;AnyTypeAnnotation&#x27;) {
+          keyType = t.stringTypeAnnotation();
+        }
+        indexers.push(t.objectTypeIndexer(t.identifier(&#x27;key&#x27;), keyType, inferType(prop.get(&#x27;value&#x27;))));
+      } else {
+        properties.push(t.objectTypeProperty(prop.node.key, inferType(prop.get(&#x27;value&#x27;))));
+      }
+      return [properties, indexers];
+    }, [[], []]);
+
+    var _path$get$reduce2 = _slicedToArray(_path$get$reduce, 2);
+
+    var properties = _path$get$reduce2[0];
+    var indexers = _path$get$reduce2[1];
+
+
+    return t.objectTypeAnnotation(properties, indexers);
+  });
+
+  register(&#x27;CallExpression&#x27;, function (path) {
+    var callee = path.get(&#x27;callee&#x27;);
+    var annotation = inferType(callee);
+    dump(annotation);
+    return t.anyTypeAnnotation();
+  });
+
+  register(&#x27;Identifier&#x27;, function (path) {
+    var binding = path.scope.getBinding(path.node.name);
+    if (!binding) {
+      return lookupGlobalIdentifier(path.node.name);
+    } else {
+      console.log(binding);
+    }
+  });
+
+  return inferType;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-typecheck.old_index" id="apidoc.module.babel-plugin-typecheck.old_index">module babel-plugin-typecheck.old_index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-typecheck.old_index.default" id="apidoc.element.babel-plugin-typecheck.old_index.default">
+        function <span class="apidocSignatureSpan">babel-plugin-typecheck.old_index.</span>default
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">default = function (_ref){var t=_ref.types;var template=_ref.template; /**
+* Binary Operators that can only produce boolean results.
+*/var BOOLEAN_BINARY_OPERATORS=[&#x27;==&#x27;,&#x27;===&#x27;,&#x27;&#x3e;=&#x27;,&#x27;&#x3c;=&#x27;,&#x27;&#x3e;&#x27;,&#x27;&#x3c;&#x27;,&#x27;instanceof&#x27;];var checks=createChecks();var staticChecks=createStaticChecks
+();var checkIsArray=expression(&#x27;Array.isArray(input)&#x27;);var checkIsMap=expression(&#x27;input instanceof Map&#x27;);var checkIsSet=expression
+(&#x27;input instanceof Set&#x27;);var checkIsClass=expression(&#x27;typeof input ===\&#x27;function\&#x27; &#x26;&#x26; input.prototype &#x26;&#x26; input.prototype.constructor === input&#x27;);var checkIsGenerator=expression(&#x27;typeof input === \&#x27;function\&#x27; &#x26;&#x26; input.generator&#x27;);var checkIsIterable=expression(&#x27;input &#x26;&#x26; (typeof input[Symbol.iterator] === \&#x27;function\&#x27; || Array.isArray(input))&#x27;);var checkIsObject=expression(&#x27;input != null &#x26;&#x26; typeof input === \&#x27;object\&#x27;&#x27;);var checkNotNull=expression(&#x27;input != null&#x27;);var checkEquals=expression(&#x27;input === expected&#x27;);var declareTypeChecker=template(&#x27;\n    const id = (function () {\n      function id (input) {\n        return check;\n      };\n      Object.defineProperty(id, Symbol.hasInstance, {\n        value: function (input) {\n          return id(input);\n        }\n      });\n      return id;\n    })();\n  &#x27;);var guard=template(&#x27;\n    if (!check) {\n      throw new TypeError(message);\n    }\n  &#x27;);var thrower=template(&#x27;\n    if (check) {\n      ret;\n    }\n    else {\n      throw new TypeError(message);\n    }\n  &#x27;);var guardInline=expression(&#x27;\n    (id =&#x3e; {\n      if (!check) {\n        throw new TypeError(message);\n      }\n      return id;\n    })(input)\n  &#x27;);var guardFn=expression(&#x27;\n    function name (id) {\n      if (!check) {\n        throw new TypeError(message);\n      }\n      return id;\n    }\n  &#x27;);var readableName=expression(&#x27;\n    inspect(input)\n  &#x27;);var checkMapKeys=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input.keys()).every(key =&#x3e; keyCheck)\n  &#x27;);var checkMapValues=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input.values()).every(value =&#x3e; valueCheck)\n  &#x27;);var checkMapEntries=expression(&#x27;\n    input instanceof Map &#x26;&#x26; Array.from(input).every(([key, value]) =&#x3e; keyCheck &#x26;&#x26; valueCheck)\n  &#x27;);var checkSetEntries=expression(&#x27;\n    input instanceof Set &#x26;&#x26; Array.from(input).every(value =&#x3e; valueCheck)\n  &#x27;);var checkObjectIndexers=expression(&#x27;\n    Object.keys(input).every(key =&#x3e; {\n      const value = input[key];\n      if (~fixedKeys.indexOf(key)) {\n        return true;\n      }\n      else {\n        return check;\n      }\n    });\n  &#x27;);var checkObjectIndexersNoFixed=expression(&#x27;\n    Object.keys(input).every(key =&#x3e; {\n      const value = input[key];\n      return check;\n    });\n  &#x27;);var propType=expression(&#x27;\n    (function(props, name, component) {\n      var prop = props[name];\n      if(!check) {\n        return new Error(\n          &#x22;Invalid prop `&#x22; + name + &#x22;` supplied to `&#x22; + component\n          + &#x22;`.\\n\\nExpected:\\n&#x22; + expected + &#x22;\\n\\nGot:\\n&#x22; + got + &#x22;\\n\\n&#x22;\n        );\n      }\n    })\n  &#x27;);var PRAGMA_IGNORE_STATEMENT=/typecheck:\s*ignore\s+statement/i;var PRAGMA_IGNORE_FILE=/typecheck:\s*ignore\s+file/i;function skipEnvironment(comments,opts){if(!opts.only){return false;}var envs=pragmaEnvironments(comments);return !opts.only.some(function(env){return envs[env];});}function pragmaEnvironments(comments){var pragma=/@typecheck:\s*(.+)/;var environments={};comments.forEach(function(comment){var m=comment.value.match(pragma);if(m){m[1].split(&#x27;,&#x27;).forEach(function(env){return environments[env.trim()]=true;});}});return environments;}var visitors={Statement:function Statement(path){maybeSkip(path);},TypeAlias:function TypeAlias(path){if(maybeSkip(path)){return;}path.replaceWith(createTypeAliasChecks(path));},InterfaceDeclaration:function InterfaceDeclaration(path){if(maybeSkip(path)){return;}path.replaceWith(createInterfaceChecks(path));},ExportNamedDeclaration:function ExportNamedDeclaration(path){if(maybeSkip(path)){return;}var node=path.node;var scope=path.scope;if(node.declaration&#x26;&#x26;node.declaration.type===&#x27;TypeAlias&#x27;){path.replaceWith(t.exportNamedDeclaration(createTypeAliasChecks(path ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-typecheck.type_checks" id="apidoc.module.babel-plugin-typecheck.type_checks">module babel-plugin-typecheck.type_checks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-typecheck.type_checks.default" id="apidoc.element.babel-plugin-typecheck.type_checks.default">
+        function <span class="apidocSignatureSpan">babel-plugin-typecheck.type_checks.</span>default
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function make(_ref) {
+  var t = _ref.types;
+
+  var ANNOTATION_TYPES = {};
+
+  registerAnnotationType(&#x27;VoidTypeAnnotation&#x27;, {
+    compatible: [&#x27;VoidTypeAnnotation&#x27;, &#x27;NullableTypeAnnotation&#x27;],
+    checkAnnotation: function checkAnnotation(expected, candidate) {
+      if (candidate.type === &#x27;VoidTypeAnnotation&#x27;) {
+        return STATICALLY_VERIFIED;
+      } else {
+        return NEEDS_CHECK;
+      }
+    },
+    checkValue: function checkValue(expected, candidate) {
+      if (t.isIdentifier(candidate) &#x26;&#x26; candidate.node.name === &#x27;undefined&#x27;) {
+        return STATICALLY_VERIFIED;
+      } else {
+        switch (candidate.type) {
+          case &#x27;NullLiteral&#x27;:
+          case &#x27;ThisExpression&#x27;:
+          case &#x27;NewExpression&#x27;:
+          case &#x27;ObjectExpression&#x27;:
+          case &#x27;ArrayExpression&#x27;:
+          case &#x27;FunctionExpression&#x27;:
+          case &#x27;ArrowFunctionExpression&#x27;:
+          case &#x27;BooleanLiteral&#x27;:
+          case &#x27;NumericLiteral&#x27;:
+          case &#x27;StringLiteral&#x27;:
+          case &#x27;RegExpLiteral&#x27;:
+            return INVALID;
+          case &#x27;Identifier&#x27;:
+            return candidate.node.name === &#x27;undefined&#x27; ? INVALID : NEEDS_CHECK;
+          default:
+            return NEEDS_CHECK;
+        }
+      }
+    },
+    runtime: function runtime(expected, id) {
+      return id + &#x27; === undefined&#x27;;
+    }
+  });
+
+  registerAnnotationType(&#x27;NullLiteralTypeAnnotation&#x27;, {
+    compatible: [&#x27;NullLiteralTypeAnnotation&#x27;, &#x27;NullableTypeAnnotation&#x27;],
+    checkAnnotation: function checkAnnotation(expected, candidate) {
+      if (candidate.type === &#x27;NullLiteralTypeAnnotation&#x27;) {
+        return STATICALLY_VERIFIED;
+      } else {
+        return NEEDS_CHECK;
+      }
+    },
+    checkValue: function checkValue(expected, candidate) {
+      if (candidate.type === &#x27;Identifier&#x27; &#x26;&#x26; candidate.node.name === &#x27;undefined&#x27;) {
+        return INVALID;
+      } else if (candidate.type === &#x27;NullLiteral&#x27;) {
+        return STATICALLY_VERIFIED;
+      } else {
+        switch (candidate.type) {
+          case &#x27;ThisExpression&#x27;:
+          case &#x27;NewExpression&#x27;:
+          case &#x27;ObjectExpression&#x27;:
+          case &#x27;ArrayExpression&#x27;:
+          case &#x27;FunctionExpression&#x27;:
+          case &#x27;ArrowFunctionExpression&#x27;:
+          case &#x27;BooleanLiteral&#x27;:
+          case &#x27;NumericLiteral&#x27;:
+          case &#x27;StringLiteral&#x27;:
+          case &#x27;RegExpLiteral&#x27;:
+            return INVALID;
+          default:
+            return NEEDS_CHECK;
+        }
+      }
+    },
+    runtime: function runtime(expected, id) {
+      return id + &#x27; === null&#x27;;
+    }
+  });
+
+  registerLiteralAnnotationType(&#x27;Boolean&#x27;);
+  registerLiteralAnnotationType(&#x27;Numeric&#x27;);
+  registerLiteralAnnotationType(&#x27;String&#x27;);
+
+  registerAnnotationType(&#x27;NullableTypeAnnotation&#x27;, {
+    compatible: [&#x27;NullableTypeAnnotation&#x27;, &#x27;NullLiteralTypeAnnotation&#x27;, &#x27;VoidTypeAnnotation&#x27;]
+
+  });
+
+<span class="apidocCodeCommentSpan">  /**
+   * Register an annotation type with the given name / config.
+   */
+</span>  function registerAnnotationType(name, config) {
+    ANNOTATION_TYPES[name] = config;
+  }
+
+  /**
+   * Register a literal annotation type.
+   */
+  function registerLiteralAnnotationType(shortName) {
+
+    var typeName = shortName + &#x27;Literal&#x27;;
+    var annotationName = shortName + &#x27;TypeAnnotation&#x27;;
+    var literalAnnotationName = typeName + &#x27;TypeAnnotation&#x27;;
+
+    registerAnnotationType(literalAnnotationName, {
+      compatible: [literalAnnotationName, annotationName],
+      checkAnnotation: function checkAnnotation(expected, candidate) {
+        if (candidate.type === literalAnnotationName) {
+          if (candidate.value === expected.value) {
+            return STATICALLY_VERIFIED;
+          } else {
+            return INVALID;
+          }
+        } else {
+          return NEEDS_CHECK;
+        }
+      },
+      checkValue: function checkValue(expected, candidate) {
+        if (candidate.type === typeName) {
+          if (candidate.value === expected.value) {
+            return STATICALLY_VERIFIED;
+          } else {
+            return INVALID;
+          }
+        } else {
+          switch (candidate.type) {
+            case &#x27;NullLiteral&#x27;:
+            case &#x27;ThisExpression&#x27;:
+            case &#x27;NewExpression&#x27;: ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
